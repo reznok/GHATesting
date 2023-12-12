@@ -4,14 +4,6 @@ on:
     types:
       - opened
 
-permissions:
-  statuses: write
-  checks: write
-  actions: write
-  contents: read
-  pull-requests: read
-
-
 jobs:
   main:
     runs-on: ubuntu-latest
