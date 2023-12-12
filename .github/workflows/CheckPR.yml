@@ -7,6 +7,7 @@ jobs:
     if: github.event.pull_request.draft == false
     steps:
       - uses: actions/checkout@v2
-      
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Install Actions
         run: bash ./actions/helloworld.sh
