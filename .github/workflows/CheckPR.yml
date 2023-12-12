@@ -1,0 +1,23 @@
+name: PR Checks
+on:
+  pull_request_target:
+    types:
+      - opened
+
+permissions:
+  statuses: write
+  checks: write
+  actions: write
+  contents: read
+  pull-requests: read
+
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout Actions
+        uses: actions/checkout@v3
+      - name: Install Actions
+        run: bash ./actions/helloworld.sh
