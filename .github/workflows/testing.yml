@@ -1,0 +1,11 @@
+name: Approve
+
+on: pull_request
+
+permissions:
+ pull-requests: write # grant write permission on the pull-requests endpoint
+jobs:
+ approve:
+  runs-on: self-hosted
+  steps:
+  - run: echo "Hello World"
