@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
     steps:
-      - name: Checkout Actions
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+      
       - name: Install Actions
         run: bash ./actions/helloworld.sh
